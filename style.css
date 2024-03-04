@@ -602,6 +602,11 @@ button:hover {
     width: fit-content;
   }
 
+  .desktopContentSection
+  {
+    min-height: 0vh;
+  }
+
 }
 
 
