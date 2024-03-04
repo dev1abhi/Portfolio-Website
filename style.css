@@ -1,12 +1,22 @@
+
+
+
+
+
 body {
     height: 100%;
     width: 100%;
     margin: 0; /* Resetting default margin */
-    /* background-color: rgb(42, 42, 138); */
     background-color: #ffffff;
+
+   
     
 
 }
+
+
+
+
 
 *::-webkit-scrollbar,
 *::-webkit-scrollbar-thumb {
@@ -139,6 +149,67 @@ header.sticky nav a {
 }
 
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  header #logo {
+    top: 20px;
+    width: 80px;
+  }
+  
+  header nav {
+    width: 100%;
+    padding: 0;
+    top: 100px;
+    height: auto;
+  }
+  
+  header nav a {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  header nav button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Tablet and Desktop styles */
+@media (min-width: 769px) {
+  header.sticky #logo {
+    top: 0;
+    transform: scale(0.8);
+    opacity: 0;
+    transition-delay: 0.5s;
+  }
+  
+  header.sticky nav {
+    top: 20px;
+    padding: 0;
+    width: 90px;
+    height: 90px;
+    transition-delay: 0.5s;
+  }
+  
+  header.sticky nav button {
+    transform: scale(1);
+    transition-delay: 0.6s;
+  }
+  
+  header.sticky nav button span {
+    transform: scalex(1);
+    transition: 0.6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s, 0.3s margin ease-in 0s;
+  }
+  
+  header.sticky nav a {
+    padding: 0;
+    opacity: 0;
+    letter-spacing: 0px;
+    transform: scale(0.3);
+    transition-delay: 0.2s;
+  }
+}
+
 #carousel {
     overflow: hidden;
     display: -webkit-box;
@@ -170,55 +241,80 @@ p {
   font-size: small;
 }
 
-#introdiv {
-    display: flex;
-   
-    justify-content:space-between;
-    width: 100%;
-    height: fit-content;
-    padding-top: 140px;
+#About_me {
+  background-color: rgb(255, 255, 255);
+  height: 600px;
 }
 
-#imgdiv 
-{
-    margin-left: 210px;
+#introdiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  padding-top: 140px;
+}
+
+#imgdiv {
+  margin-left: 210px;
 }
 
 #prof {
-    margin-left: 0px;
-    width:350px;
-    height: 100%;
-    border-radius: 1.2rem;
-    
+  margin-left: 0px;
+  width: 350px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 1.2rem;
 }
 
 #shadow {
-    margin-top: 140px;
-    padding:20px 0;
-    box-shadow: 0 1em 1em -1em rgba(0, 0, 0, .25);
-    width: 20%;
-    height: 10px;
-    transform: rotate(-90deg);
-
+  margin-top: 140px;
+  padding: 20px 0;
+  box-shadow: 0 1em 1em -1em rgba(0, 0, 0, .25);
+  width: 20%;
+  height: 10px;
+  transform: rotate(-90deg);
 }
-
-/* Media query for smaller screens */
-@media screen and (max-width: 1100px) {
-    p {
-        font-size: 12px; /* Reduce font size for smaller screens */
-    }
-}
-
-
-
-
 
 #about {
-    width: 30vw;
-    margin-right: 80px;
-    /* padding-left: 10%;
-    padding-right: 10%; */
+  width: 30vw;
+  margin-right: 80px;
 }
+
+@media screen and (max-width: 768px) {
+  #introdiv {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+  }
+
+  #imgdiv {
+    margin-left: 100px;
+     margin-right: 10px;
+      margin-bottom: 20px;
+  }
+
+  #prof {
+      width: 80%;
+  }
+
+  #about {
+      width: 80%;
+      margin-right: 0;
+  }
+
+  #buttonContainer {
+    margin-top: 80px; /* Adjust margin-top */
+}
+}
+
+@media screen and (max-width: 768px) {
+  #shadow {
+      display: none;
+  }
+}
+
+
+/* animated button */
 
 button {
     position: relative; /* Adding position */
@@ -226,6 +322,7 @@ button {
     left: 190px; /* Adjusting left position */
     font-size: 25px;
     font-family: fantasy;
+    z-index: 9;
     font-style: normal;
     letter-spacing: 5px;
     color: black;
@@ -235,20 +332,46 @@ button {
     transition: background-color 2.0s ease;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  button {
+      top: 65px; /* Adjusting top position for smaller screens */
+      left: 50%; /* Centering the button horizontally */
+      transform: translateX(-50%); /* Centering the button horizontally */
+      width: 80%; /* Adjusting width to fit smaller screens */
+      font-size: 20px; /* Adjusting font size for smaller screens */
+  }
+}
+
+/* Tablet and Desktop styles */
+@media (min-width: 769px) {
+  button {
+      top: 65px; /* Retaining the top position for larger screens */
+      left: 190px; /* Retaining the left position for larger screens */
+      width: 400px; /* Retaining the width for larger screens */
+      font-size: 25px; /* Retaining the font size for larger screens */
+  }
+}
+
 button:hover {
     background-color: black;
     color: white;
 }
 
 
+/* animated button ending */
+/* for responsive change spin,drag margin height width and radius of ground */
+
 
 #drag-container,
 #spin-container {
   position: relative;
+ 
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: auto;
+  
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transform: rotateX(-10deg);
@@ -289,7 +412,7 @@ button:hover {
 }
 #ground {
   width: 900px;
-  height: 900px;
+  height:900px;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -302,6 +425,20 @@ button:hover {
     transparent
   );
 }
+
+@media (max-width: 600px) {
+
+  #drag-container,
+  #spin-container {
+            margin-top: 150px;
+           margin-right: 180px;
+
+  }
+}
+
+
+
+
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotateY(0deg);
@@ -347,6 +484,7 @@ button:hover {
 
 
 
+/* Project Section */
 
 .gallery h1 {
 	/* font-size:clamp(2em, 4vw, 6em); */
@@ -454,29 +592,18 @@ button:hover {
 	border-radius:6vw;
 }
 
+@media (max-width: 500px) {
 
-/* defines styles for screens up to 599px wide */
-@media screen and (max-width: 599px) {
-	.left {
-		display:none;
-	}
-	
-	.right {
-		height:auto;
-		width:100%;
-		align-items:center;	
-	}	
-	
-	.desktopPhotos {
-		display:none;
-	}
-	
-	.mobileContent {
-		display:block;
-	}
-	
+  .right {
+    display: none;
+  }
+
+  .left {
+    width: fit-content;
+  }
 
 }
+
 
 
 
@@ -668,6 +795,36 @@ button:hover {
   filter: grayscale(100%);
 }
 
+ /* footer section */
+
+ .contact-btn {
+  height: 60px;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+#tele-btn {
+  margin-left: 40px;
+  padding: 15px;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-btn {
+    margin-top: 60%;
+      width: 100%;
+      margin-left: 50%;
+  }
+
+  #tele-btn {
+    margin-top: 20%;
+      margin-left: 50%;
+  }
+}
+
 
 .social-buttons {
   display: flex;
@@ -828,10 +985,9 @@ button:hover {
   background: #5D6AF2;
 }
 
-.social-button--npmjs {
-  color: #c12127;
-}
 
-.social-button--npmjs::after {
-  background: #c12127;
-}
+
+
+
+
+

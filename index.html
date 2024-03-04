@@ -17,8 +17,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
 
 
@@ -26,6 +28,9 @@
 
 <body>
 
+ 
+
+    <div id="content">
     <header id="myHeader" class="">
         <img id="logo" src="assets/abc.png">
         <nav>
@@ -55,10 +60,10 @@
    
    
     <div id="buttonContainer" style="color: antiquewhite; margin-top: -120px;">
-        <button id="myButton" type="button">I am Abhilash.</button>
+        <button id="myButton" type="button">Hello There!.</button>
     </div>
 
-   
+   <div style="height: 60px;"> </div>
 
     <div id="About_me" style="background-color: rgb(255, 255, 255);height: 600px;">
 
@@ -123,9 +128,14 @@
     <div  id="Projects" height: fit-content;background-color: aliceblue;">
 
 
-        <div style="align-items: end;padding: 20px;  display: flex;justify-content: flex-end;">
+        <!-- <div style="align-items: end;padding: 20px;  display: flex;justify-content: flex-end;">
             <h1 style="font-style: norma;margin-right:280px;margin-top:100px;font-size: 40px;">My Projects </h1>
-        </div>
+        </div> -->
+
+        <div style="padding: 5%; margin-top: 10%; display: flex; justify-content: center; align-items: center; text-align: center;">
+          <h1 style="font-style: normal; margin: 0; font-size: 40px;">My Projects</h1>
+      </div>
+      
 
         
        
@@ -244,7 +254,7 @@
 
 
 
-<div id="Contact" style="height: 500px;background-color: aliceblue;padding: 20px;position: relative;">
+<div id="Contact" style="height: auto;background-color: aliceblue;padding: 20px;position: relative;">
 
 <center>
    <h1 style="margin-top: 20px;font-style: normal;text-decoration: overline;margin-bottom: -20px;">GOT A PROJECT IN MIND?</h1>
@@ -262,9 +272,13 @@
 
    <center style="margin-top: 70px;">
   <div >
-    <button class="contact-btn" id="email-btn" style="height: 60px;width: 200px;padding: 0px;margin: 0px; top: 0px;left: 0px;">Email</button>
-    <button class="contact-btn" id="email-btn" style="height: 60px;width: fit-content;padding: 0px;margin: 0px;margin-left:40px; padding:15px;top: 0px;left: 0px">Telephone</button>
-</div>
+    <!-- <button class="contact-btn" id="email-btn" style="height: 60px;width: 200px;padding: 0px;margin: 0px; top: 0px;left: 0px;">Email</button>
+    <button class="contact-btn" id="tele-btn" style="height: 60px;width: fit-content;padding: 0px;margin: 0px;margin-left:40px; padding:15px;top: 0px;left: 0px">Telephone</button> -->
+
+    <button class="contact-btn" id="email-btn">Email</button>
+    <button class="contact-btn" id="tele-btn">Telephone</button>
+
+  </div>
 </center>
 
 </div>
@@ -301,7 +315,7 @@
 
 
     
-    <div class="row copyright"  style="position: absolute; bottom: 20px; left: 0; right: 0; display: flex; justify-content: center;" >
+    <div class="row copyright"  style="position: relative; bottom: 20px; left: 0; right: 0; top:5rem;display: flex; justify-content: center;" >
         <p style="font-size: 15px;">Copyright &copy; 2024 Abhilash Sarangi | All Rights Reserved | Made with 🧡</p>
       </div>
     
@@ -309,6 +323,7 @@
     
 </div>
 
+</div>
 
 </div>
 

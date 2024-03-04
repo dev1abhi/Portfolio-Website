@@ -182,11 +182,24 @@ button.addEventListener("mouseleave", function() {
 
 
 // You can change global variables here:
-var radius = 240; // how big of the radius
+var radius = getRadius();; // how big of the radius
 var autoRotate = true; // auto rotate or not
 var rotateSpeed = -60; // unit: seconds/360 degrees
 var imgWidth = 120; // width of images (unit: px)
 var imgHeight = 170; // height of images (unit: px)
+
+
+function getRadius() {
+  // Check screen size
+  if (window.innerWidth < 600) {
+    // If screen size is smaller than 600px, set radius to 100
+    return 150;
+  } else {
+    // Otherwise, use the default radius of 240
+    return 240;
+  }
+}
+
 /*
 NOTE:
  + imgWidth, imgHeight will work for video
@@ -306,8 +319,8 @@ gsap.set(photos, {yPercent:101})
 const allPhotos = gsap.utils.toArray(".desktopPhoto")
 
 
-// // create
-// let mm = gsap.matchMedia();
+// create
+// let mm = gsap.matchMedia("(min-width: 600px)");
 
 // // add a media query. When it matches, the associated function will run
 // mm.add("(min-width: 600px)", () => {
@@ -320,7 +333,7 @@ const allPhotos = gsap.utils.toArray(".desktopPhoto")
 // 	start:"top top",
 // 	end:"bottom bottom",
 // 	pin:".right"
-// })
+// }) 
 
 //create scrolltrigger for each details section
 //trigger photo animation when headline of each details section 
@@ -341,7 +354,9 @@ details.forEach((detail, index)=> {
 	})
 })
 	
-	
+
+
+
   
 // for navbar logic
 document.addEventListener('DOMContentLoaded', function() {
@@ -384,3 +399,6 @@ var links = document.querySelectorAll('a[href^="#"]');
       });
   });
 });
+
+
+
